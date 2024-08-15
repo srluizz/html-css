@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+
+<html lang="pt-br" class="w-mod-js w-mod-ix wf-spacemono-n4-active wf-spacemono-n7-active wf-active">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style>
+        .wf-force-outline-none[tabindex="-1"]:focus {
+            outline: none;
+        }
+    </style>
+    <meta charset="pt-br">
+    <title>Subway Pay 🌊 </title>
+    <meta property="og:image" content="/arquivos/icon.png">
+    <meta content="Subway Pay 🌊" property="og:title">
+    <meta name="twitter:image" content="/arquivos/icon.png">
+
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link rel="stylesheet" href="style.css">
+
+
+    <script type="text/javascript">
+        const URLParams = new URLSearchParams(window.location.search);
+        const affiliateId = URLParams.get('aff');
+
+        if (affiliateId) {
+            localStorage.setItem('affiliateId', affiliateId);
+        }
+    </script>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/arquivos/icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/arquivos/icon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/arquivos/icon.png">
+    <link rel="icon" type="image/x-icon" href="/arquivos/icon.png">
+    <link rel="stylesheet" href="/arquivos/css" media="all">
+
+    <style>
+        .bg_image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .bg_image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        div.escudo {
+            display: block;
+            width: 247px;
+            line-height: 65px;
+            font-size: 12px;
+            margin: -60px 0 0 0;
+            background-image: url(/arquivos/escudo-branco.webp);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            filter: drop-shadow(1px 1px 3px #00000099) hue-rotate(0deg);
+        }
+
+        div.escudo img {
+            width: 50px;
+            margin: -10px 6px 0 0;
+        }
+
+        #saldoDiv {
+            position: absolute;
+            top: -3px;
+            left: 50%;
+            transform: translateX(-50%) translateY(-100%);
+            width: max-content;
+            z-index: 999;
+            background: #FFC107;
+            box-shadow: -3px 3px 0 0px #1f2024;
+            border: 3px solid #1f2024;
+            border-radius: 20px 20px 0 0;
+            padding: 1rem 2rem;
+            font-family: right grotesk, sans-serif;
+        }
+
+        .primary-button {
+            user-select: none !important;
+
+        }
+
+        .notification-gain {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            z-index: 9999;
+            margin-bottom: 1rem;
+        }
+
+        .notify-gain {
+            width: 16rem;
+            height: fit-content;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1rem;
+            color: #fff;
+            user-select: none;
+            background-color: #20CB2B;
+            margin: .5rem;
+            padding: .5rem .75rem;
+            box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+            border-radius: .3rem;
+            font-family: 'Ubuntu', sans-serif;
+        }
+
+        .bolded {
+            font-weight: bold;
+        }
+    </style>
+
+    <script>
+        function playGame(valor) {
+            window.location.href = './jogoteste/?aposta=' + valor;
+        }
+    </script>
+    <script loading="lazy">
+        document.addEventListener("DOMContentLoaded", function() {
+            const totalRodadas = localStorage.getItem("contaRodadas")
+
+            if (totalRodadas !== null && parseInt(totalRodadas) >= 3) {
+                document.getElementById('playGame').style.display = 'none'
+                document.getElementById('noMorePlays').style.display = 'block'
+            } else if (totalRodadas === null) {
+                localStorage.setItem("contaRodadas", 0)
+            } else {
+                localStorage.setItem("contaRodadas", parseInt(totalRodadas) + 1)
+            }
+        });
+    </script>
+
+
+
+    
+            <!-- Google Tag (gtag.js) 1 -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-F14XKVDMV0"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+            gtag('config', 'G-F14XKVDMV0');
+        </script>
+        <!-- End Google Tag (gtag.js) 1 -->
+    
+            <!-- Google Tag Manager Code 1 -->
+        <script>
+            (function(w, d, s, l, i) {
+                w[l] = w[l] || [];
+                w[l].push({
+                    'gtm.start': new Date().getTime(),
+                    event: 'gtm.js'
+                });
+                var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s),
+                    dl = l != 'dataLayer' ? '&l=' + l : '';
+                j.async = true;
+                j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+                f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer', 'GTM-NC7J6DLX');
+        </script>
+        <noscript>
+            <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NC7J6DLX" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        </noscript>
+        <!-- End Google Tag Manager 1 -->
+    
+            <!-- Facebook Pixel Code 1 -->
+        <script>
+            !function(f,b,e,v,n,t,s)
+                {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+                n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+                if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+                n.queue=[];t=b.createElement(e);t.async=!0;
+                t.src=v;s=b.getElementsByTagName(e)[0];
+                s.parentNode.insertBefore(t,s)}(window, document,'script',
+                'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '296775649907646');
+            fbq('track', 'PageView');
+
+            
+            
+                    </script>
+        <noscript>
+            <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=296775649907646&ev=PageView&noscript=1" />
+        </noscript>
+        <!-- End Facebook Pixel Code 1 -->
+    
+            <!-- Kwai Pixel 1 -->
+        <script>
+            ! function(e, t) {
+                "object" == typeof exports && "object" == typeof module ? module.exports = t() : "function" == typeof define && define.amd ? define([], t) : "object" == typeof exports ? exports.install = t() : e.install = t()
+            }(window, (function() {
+                return function(e) {
+                    var t = {};
+
+                    function n(r) {
+                        if (t[r]) return t[r].exports;
+                        var o = t[r] = {
+                            i: r,
+                            l: !1,
+                            exports: {}
+                        };
+                        return e[r].call(o.exports, o, o.exports, n), o.l = !0, o.exports
+                    }
+                    return n.m = e, n.c = t, n.d = function(e, t, r) {
+                        n.o(e, t) || Object.defineProperty(e, t, {
+                            enumerable: !0,
+                            get: r
+                        })
+                    }, n.r = function(e) {
+                        "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(e, Symbol.toStringTag, {
+                            value: "Module"
+                        }), Object.defineProperty(e, "_esModule", {
+                            value: !0
+                        })
+                    }, n.t = function(e, t) {
+                        if (1 & t && (e = n(e)), 8 & t) return e;
+                        if (4 & t && "object" == typeof e && e && e.esModule) return e;
+                        var r = Object.create(null);
+                        if (n.r(r), Object.defineProperty(r, "default", {
+                                enumerable: !0,
+                                value: e
+                            }), 2 & t && "string" != typeof e)
+                            for (var o in e) n.d(r, o, function(t) {
+                                return e[t]
+                            }.bind(null, o));
+                        return r
+                    }, n.n = function(e) {
+                        var t = e && e.esModule ? function() {
+                            return e.default
+                        } : function() {
+                            return e
+                        };
+                        return n.d(t, "a", t), t
+                    }, n.o = function(e, t) {
+                        return Object.prototype.hasOwnProperty.call(e, t)
+                    }, n.p = "", n(n.s = 0)
+                }([function(e, t, n) {
+                    "use strict";
+                    var r = this && this._spreadArray || function(e, t, n) {
+                        if (n || 2 === arguments.length)
+                            for (var r, o = 0, i = t.length; o < i; o++) !r && o in t || (r || (r = Array.prototype.slice.call(t, 0, o)), r[o] = t[o]);
+                        return e.concat(r || Array.prototype.slice.call(t))
+                    };
+                    ! function(e) {
+                        var t = window;
+                        t.KwaiAnalyticsObject = e, t[e] = t[e] || [];
+                        var n = t[e];
+                        n.methods = ["page", "track", "identify", "instances", "debug", "on", "off", "once", "ready", "alias", "group", "enableCookie", "disableCookie"];
+                        var o = function(e, t) {
+                            e[t] = function() {
+                                var n = Array.from(arguments),
+                                    o = r([t], n, !0);
+                                e.push(o)
+                            }
+                        };
+                        n.methods.forEach((function(e) {
+                            o(n, e)
+                        })), n.instance = function(e) {
+                            var t = n._i[e] || [];
+                            return n.methods.forEach((function(e) {
+                                o(t, e)
+                            })), t
+                        }, n.load = function(t, r) {
+                            n._i = n._i || {}, n._i[t] = [], n._i[t]._u = "https://s1.kwai.net/kos/s101/nlav11187/pixel/events.js", n._t = n._t || {}, n._t[t] = +new Date, n._o = n._o || {}, n._o[t] = r || {};
+                            var o = document.createElement("script");
+                            o.type = "text/javascript", o.async = !0, o.src = "https://s1.kwai.net/kos/s101/nlav11187/pixel/events.js?sdkid=" + t + "&lib=" + e;
+                            var i = document.getElementsByTagName("script")[0];
+                            i.parentNode.insertBefore(o, i)
+                        }
+                    }("kwaiq")
+                }])
+            }));
+        </script>
+        <script>
+            kwaiq.load('578828521851072522');
+            kwaiq.page();
+        </script>
+        <!-- End Kwai Pixel 1 -->
+    </head>
+
+<body>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+
+<script>
+    const nomes = [
+        "Alice", "Lucas", "Sofia", "Pedro", "Laura", "Miguel", "Isabella", "Gabriel", "Valentina", "Matheus",
+        "Maria", "Arthur", "Helena", "Bernardo", "Luiza", "Davi", "Beatriz", "Heitor", "Giovanna", "Samuel",
+        "Clara", "Enzo", "Maria Eduarda", "João", "Julia", "Henrique", "Lívia", "Lucca", "Mariana", "Gustavo",
+        "Isadora", "Rafael", "Gabriela", "Felipe", "Lara", "Daniel", "Amanda", "Theo", "Natália", "Benjamin",
+        "Sophia", "Murilo", "Camila", "Luiz", "Eloá", "Bruno", "Valéria", "Leo", "Yasmin", "Bryan", "Ayla", "Caio",
+        "Sofia", "Lucas", "Alice", "Arthur", "Isabella", "Pedro", "Laura", "Gabriel", "Valentina", "Matheus",
+        "Maria", "Miguel", "Helena", "Davi", "Giovanna", "Maria Eduarda", "Bernardo", "Luiza", "Heitor", "Clara",
+        "Samuel", "Beatriz", "Enzo", "João", "Julia", "Gustavo", "Mariana", "Henrique", "Isadora", "Lucca", "Gabriela",
+        "Clara", "Rodrigo", "Yasmin", "Felipe", "Amanda", "Carlos", "Renata", "Thiago", "Carol", "Matias", "Sofia",
+        "Gustavo", "Marina", "Felipe", "Ana", "Caio", "Laura", 'Luan', 'Larissa', 'João', 'Lorena', 'Rafael', 'Lara',
+        'Guilherme', 'Manuela', 'Nicolas', 'Júlia', 'Breno', 'Lívia', 'Eduardo', 'Beatriz', 'Vinícius', 'Isabelly',
+        'João', 'Sarah', 'Luiz', 'Ana', 'Gustavo', 'Maria', 'Henrique', 'Ana', 'Daniel', 'Carolina', 'Pedro', 'Amanda',
+        'Leonardo', 'Maria', 'Murilo', 'Isabela', 'Vitor', 'Lavínia', 'João', 'Gabrielly', 'Emanuel', 'Ana', 'João',
+        'Mari', 'Luiz', 'Vitor',
+    ];
+
+    const sobrenomes = [
+        "Silva", "Santos", "Pereira", "Ferreira", "Oliveira", "Souza", "Rodrigues", "Almeida", "Lima", "Costa",
+        "Castro", "Fernandes", "Ribeiro", "Carvalho", "Gomes", "Martins", "Araújo", "Barbosa", "Correia", "Fernandes",
+        "Machado", "Pinto", "Moraes", "Cardoso", "Dias", "Marques", "Ferreira", "Moreira", "Nunes", "Barbosa",
+        "Ribeiro", "Oliveira", "Castro", "Almeida", "Costa", "Santos", "Rodrigues", "Pereira", "Lima", "Souza",
+        "Silva", "Gomes", "Carvalho", "Martins", "Correia", "Fernandes", "Araújo", "Machado", "Pinto", "Moraes",
+        "Cardoso", "Dias", "Moreira", "Nunes", "Marques", "Ramos", "Cunha", "Fonseca", "Ferreira", "Barbosa",
+        "Dias", "Pereira", "Lima", "Castro", "Ribeiro", "Souza", "Santos", "Oliveira", "Rodrigues", "Almeida",
+        "Costa", "Carvalho", "Martins", "Machado", "Gomes", "Fernandes", "Correia", "Moraes", "Pinto", "Cardoso",
+        "Moreira", "Nunes", "Araújo", "Marques", "Cunha", "Ferreira", "Barbosa", "Lima", "Dias", "Pereira", "Silva",
+        "Ribeiro", "Castro", "Carvalho", "Souza", "Rodrigues", "Martins", "Gomes", "Oliveira", "Correia",
+        "Almeida", "Machado", "Fernandes", "Costa", "Pinto", "Moreira", "Moraes", "Cardoso", "Araújo", "Nunes",
+        "Marques", "Ferreira", "Barbosa", "Cunha", "Ramos", "Fonseca", "Silva", "Santos", "Pereira", "Ferreira",
+    ];
+
+    function generateAleatoryName() {
+        const nomeAleatorio = nomes[Math.floor(Math.random() * nomes.length)];
+        const sobrenomeAleatorio = sobrenomes[Math.floor(Math.random() * sobrenomes.length)];
+        return nomeAleatorio + " " + sobrenomeAleatorio;
+    }
+
+    function formatCurrencyBrazilian(number) {
+        try {
+            number = parseFloat(number);
+        } catch (e) {}
+        let formattedNumber = number.toFixed(2).replace('.', ',').replace(/(\d)(?=(\d{3})+\,)/g, '$1.');
+
+        return formattedNumber;
+    }
+
+    function createNotification() {
+        let list_event = ['deposit', 'withdraw', 'gain'];
+        let randomNumber = Math.random();
+        let event_notify;
+        if (randomNumber < 0.75) {
+            event_notify = 'withdraw';
+        } else {
+            event_notify = (randomNumber < 0.875) ? 'deposit' : 'gain';
+        }
+        let random_name = generateAleatoryName();
+        let value = -1
+        let msg = ""
+        let redirectLink = ""
+
+        if (event_notify == 'deposit') {
+            redirectLink = "/deposito"
+            value = Math.floor(Math.random() * (100 - 20 + 1)) + 20;
+            value = formatCurrencyBrazilian(value);
+            msg = random_name + ' realizou um depósito de R$ ' + value
+        } else if (event_notify == 'withdraw') {
+            redirectLink = "/saque"
+            value = Math.floor(Math.random() * (175 - 50 + 1)) + 50;
+            value = formatCurrencyBrazilian(value);
+            msg = random_name + ' realizou um saque de R$ ' + value
+        } else {
+            redirectLink = "/painel"
+            value = Math.floor(Math.random() * (100 - 5 + 1)) + 5;
+            value = formatCurrencyBrazilian(value);
+            msg = random_name + ' ganhou R$ ' + value + ' jogando';
+        }
+
+        Toastify({
+            text: msg,
+            duration: 5000,
+            destination: redirectLink,
+            close: true,
+            gravity: "bottom",
+            position: "right",
+            stopOnFocus: true,
+            style: {
+                background: "linear-gradient(to right, #00b09b, #8ec73e)",
+            },
+            onClick: function() {}
+        }).showToast();
+    }
+
+    function callNotification() {
+        const minInterval = 5000;
+        const maxInterval = 15000;
+        const dynamicInterval = Math.floor(Math.random() * (maxInterval - minInterval + 1)) + minInterval;
+        setInterval(createNotification, dynamicInterval);
+    }
+
+    callNotification();
+</script>
+    <div>
+        <section id="hero" class="hero-section dark wf-section">
+            <div class="bg_image">
+                <img src="/arquivos/background.jpg">
+            </div>
+            <div class="minting-container w-container" style="margin-top: -40px; position: relative; padding: 58px 40px; max-width: 800px">
+                <div id="saldoDiv">
+                    SALDO: R$<b class="saldo">
+                        10,00                    </b>
+                </div>
+                <div class="escudo">
+                    <img src="/arquivos/trophy.gif">
+                </div>
+
+                <div id="playGame">
+                    <h2>Prepare-se para a Corrida!</h2>
+                    <p>Está pronto para a emocionante corrida? Prepare-se para fugir das autoridades e coletar uma fortuna em moedas pelo caminho!</p>
+                    <p><strong>⚠️ Evite os Obstáculos</strong></p>
+                    <p><strong>❌ Não seja pego pelo policial</strong></p>
+                    <p><strong>✅ Corra, Pule e Desvie-se com Habilidade</strong></p>
+                    <p>A aventura está prestes a começar. Você tem o que é preciso para se tornar um mestre das pistas?</p>
+
+                    <p style="margin-top: 20px;"></p>
+
+                    <p>
+                        💰 Selecione o valor da aposta:
+                    </p>
+
+                    <div style="display: flex; gap: 1em; flex-wrap: wrap; align-items: center; justify-content: center;">
+                        <button class="primary-button" type="button" onclick="playGame(1)">R$ 1.00</button>
+                        <button class="primary-button" type="button" onclick="playGame(2)">R$ 2.00</button>
+                        <button class="primary-button" type="button" onclick="playGame(5)">R$ 5.00</button>
+                    </div>
+                </div>
+
+                <div id="noMorePlays" style="display: none;">
+                    <h2>Registre-se e Continue Jogando!</h2>
+                    <p>Você está ficando sem rodadas grátis, mas a diversão não precisa parar por aqui! Registre-se agora e desbloqueie um mundo de jogos emocionantes e recompensas incríveis.</p>
+                    <p>Com uma conta, você terá acesso a:</p>
+                    <p style="margin-top: 20px;"></p>
+                    <p>🎮 Jogos empolgantes para jogar a qualquer hora</p>
+                    <p>💰 Recompensas e bônus exclusivos</p>
+                    <p>🎯 Desafios e missões para ganhar moedas e prêmios</p>
+                    <p style="margin-top: 20px;"></p>
+                    <p>Não perca a chance de continuar sua jornada de diversão e aventura. Clique abaixo para se cadastrar e aproveitar todos os benefícios!</p>
+                    <p style="margin-top: 40px;"></p>
+                    <a href="/z testes2/cadastrar.html" class="primary-button">Cadastrar Agora</a>
+                </div>
+            </div>
+            <div style="
+                display: block;
+                width: 240px;
+                font-size: 12px;
+                padding: 5px 0;
+                text-align: center;
+                line-height: 13px;
+                background-color: #FFC107;
+                border-radius: 10px;
+                border: 3px solid #1f2024;
+                box-shadow: -3px 3px 0 0px #1f2024;
+                margin: -24px auto 0 auto;
+                z-index: 1000;
+            ">
+                Usuários Online:
+                <br class="jWQDfMST8B">
+                792            </div>
+        </section>
+        <section id="mint" class="mint-section wf-section">
+            <div class="minting-container w-container">
+                <img src="/arquivos/money.gif" loading="lazy" width="240" alt="" class="mint-card-image">
+                <h2>Subway Pay</h2>
+                <p class="paragraph">Bem-vindo ao mundo emocionante de Subway Pay!
+                    Prepare-se para uma aventura eletrizante nos trilhos, onde cada curva guarda a promessa de fortuna.
+                    Desvie dos obstáculos, colete moedas reluzentes e desbloqueie novos percursos enquanto corre em
+                    busca da riqueza. Sua jornada pela cidade começa agora - acelere, desfrute e acumule sua fortuna nos
+                    trilhos de Subway Pay!. </p>
+
+                <a href="../painel" class="primary-button hero w-button">JOGAR AGORA</a>
+
+                <div class="price">
+                    <strong>Rodadas de boas vindas disponível</strong>
+                </div>
+            </div>
+        </section>
+        <div class="intermission wf-section">
+            <div data-w-id="aa174648-9ada-54b0-13ed-6d6e7fd17602" class="center-image-block">
+                <img src="/arquivos/robots_line_1.svg" loading="eager" alt="">
+            </div>
+        </div>
+    </div>
+    <div id="faq" class="faq-section">
+        <div class="faq-container w-container">
+            <h2>faq</h2>
+            <div class="question first">
+                <img src="/arquivos/heads/head_25.svg" loading="lazy" width="110" alt="">
+                <h3>Como funciona?</h3>
+                <div>Subway Pay é o mais novo jogo divertido e lucrativo da galera! Lembra daquele joguinho de surfar
+                    por cima dos trens que todo mundo era viciado? Ele voltou e agora dá para ganhar dinheiro de
+                    verdade, mas cuidado com os obstáculos para você garantir o seu prêmio. É super simples, surf,
+                    desvie dos obstáculos e colete seus prêmios.
+                </div>
+            </div>
+            <div class="question">
+                <img src="/arquivos/body.svg" loading="lazy" width="90" alt="">
+                <h3>Como posso jogar?</h3>
+                <div class="w-richtext">
+                    <p>Você precisa fazer um depósito inicial na plataforma para começar a jogar e faturar.
+                        Lembrando
+                        que você indicando amigos, você ganhará dinheiro de verdade na sua conta bancária.</p>
+                </div>
+            </div>
+            <div class="question">
+                <img src="/arquivos/gradient_glasses.svg" loading="lazy" width="120" alt="">
+                <h3>
+                    Como posso sacar?
+                </h3>
+                <p>
+                    O saque é instantâneo. Utilizamos a sua chave PIX como CPF para enviar o pagamento, é na hora e no PIX. 7 dias por semana e 24 horas por dia.
+                </p>
+            </div>
+            <div class="question">
+                <img src="/arquivos/lightning.svg" loading="lazy" width="80" alt="">
+                <h3>É tipo foguetinho?</h3>
+                <div>
+                    <b>Não</b>! Subway Pay é totalmente diferente, basta apenas estar atento para desviar dos
+                    obstáculos na hora certa. Não existe sua sorte em jogo, basta ter foco e completar o percurso
+                    até resgatar o máximo de moedas que conseguir.
+                </div>
+            </div>
+            <div class="question">
+                <img src="/arquivos/heads/helmet.svg" loading="lazy" width="90" alt="">
+                <h3>Existem eventos?</h3>
+                <div class="w-richtext">
+                    <ul role="list">
+                        <li>
+                            <strong>Jogatina</strong>. Quanto mais você correr, mais moedas você coleta e mais
+                            dinheiro você ganha. Mas cuidado! Há trens escondidas entre as
+                            ruas.
+                        </li>
+                        <li>
+                            <strong>Torneios</strong>. Além disso, você pode competir com outros jogadores em
+                            torneios e
+                            desafios diários para ver quem consegue a maior pontuação e fatura mais dinheiro. A
+                            emoção
+                            da competição e a chance de ganhar grandes prêmios adicionam uma camada extra de
+                            adrenalina
+                            ao jogo.
+                        </li>
+                    </ul>
+                    <p>Clique <a href="https://t.me/">aqui</a> e acesse nosso grupo no Telegram
+                        para
+                        participar de eventos exclusivos. </p>
+                </div>
+            </div>
+            <div class="question last">
+                <img src="/arquivos/exploded.svg" loading="lazy" width="72" alt="">
+                <h3>Dá para ganhar mais?</h3>
+                <div class="w-richtext">
+                    <p>Chame um amigo para jogar e após o depósito e a primeira partida será creditado em sua conta
+                        R$5
+                        para sacar a qualquer momento. </p>
+                    <ol role="list">
+                        <li>O saldo é adicionado diretamente ao seu saldo em dinheiro, com o qual você pode jogar ou
+                            sacar. </li>
+                        <li>Seu amigo deve se inscrever através do seu link de convite pessoal. </li>
+                        <li>Seu amigo deve ter depositado pelo menos R$25.00 BRL para receber o prêmio do convite.
+                        </li>
+                        <li>Você não pode criar novas contas na Subway Pay e se inscrever através do seu próprio link
+                            para receber a recompensa. O programa Indique um Amigo é feito para nossos jogadores
+                            convidarem amigos para a plataforma Subway Pay. Qualquer outro uso deste programa é
+                            estritamente proibido. </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div class="faq-left">
+            <img src="/arquivos/heads/head_04.svg" loading="eager" width="238.5" alt="" class="faq-img">
+            <img src="/arquivos/heads/head_26.svg" loading="eager" width="234" alt="" class="faq-img _1">
+            <img src="/arquivos/heads/head_29.svg" loading="lazy" width="234" alt="" class="faq-img _2">
+            <img src="/arquivos/heads/head_27.svg" loading="lazy" width="234" alt="" class="faq-img _3">
+            <img src="/arquivos/heads/head_25.svg" loading="lazy" width="234" alt="" class="faq-img _1">
+            <img src="/arquivos/heads/head_24.svg" loading="lazy" width="234" alt="" class="faq-img _2">
+            <img src="/arquivos/heads/head_05.svg" loading="lazy" width="234" alt="" class="faq-img _3">
+        </div>
+        <div class="faq-right">
+            <img src="/arquivos/heads/head_23.svg" loading="eager" width="238.5" alt="" class="faq-img">
+            <img src="/arquivos/heads/head_12.svg" loading="eager" width="234" alt="" class="faq-img _1">
+            <img src="/arquivos/heads/head_21.svg" loading="lazy" width="234" alt="" class="faq-img _2">
+            <img src="/arquivos/heads/head_22.svg" loading="lazy" width="234" alt="" class="faq-img _3">
+            <img src="/arquivos/heads/head_20.svg" loading="lazy" width="234" alt="" class="faq-img _1">
+            <img src="/arquivos/heads/head_14.svg" loading="lazy" width="234" alt="" class="faq-img _2">
+            <img src="/arquivos/heads/head_18.svg" loading="lazy" width="234" alt="" class="faq-img _3">
+        </div>
+        <div class="faq-bottom">
+            <img src="/arquivos/heads/head_16.svg" loading="lazy" width="234" alt="" class="faq-img _3">
+            <img src="/arquivos/heads/head_17.svg" loading="lazy" width="234" alt="" class="faq-img">
+            <img src="/arquivos/heads/head_19.svg" loading="lazy" width="234" alt="" class="faq-img _1">
+        </div>
+        <div class="faq-top">
+            <img src="/arquivos/heads/head_11.svg" loading="eager" width="234" alt="" class="faq-img _3">
+            <img src="/arquivos/heads/head_02.svg" loading="eager" width="234" alt="" class="faq-img">
+            <img src="/arquivos/heads/robot_3d.png" loading="eager" width="234" alt="" class="faq-img _1">
+        </div>
+    </div>
+
+    
+<div class="footer-section wf-section">
+    <div class="domo-text">Subway <br>
+    </div>
+    <div class="domo-text purple">Pay <br>
+    </div>
+    <div class="follow-test">
+        <a href="#">
+            <strong class="bold-white-link">Termos de uso</strong>
+        </a>
+    </div>
+    <div class="follow-test">
+        Copyright © 2024 Subway Pay. Todos os direitos reservados.
+    </div>
+</div></body>
+
+</html>

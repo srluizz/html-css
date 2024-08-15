@@ -1,0 +1,74 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.stats div {
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.stats div h2 {
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+}
+
+.stats div p {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #007bff;
+}
+
+.purchaseList {
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+
+.purchaseList h2 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.purchaseList ul {
+    list-style: none;
+    padding: 0;
+}
+
+.purchaseList li {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.purchaseList li span {
+    font-weight: bold;
+    color: #333;
+}

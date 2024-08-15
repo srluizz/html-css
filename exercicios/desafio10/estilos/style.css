@@ -1,0 +1,187 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'Bebas Neue';
+    src: url('https://fonts.gstatic.com/s/bebasneue/v2/JTUSjIg69CK48gW7PXoo9Wdhzg.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'idroid';
+    src: url('/desafio10/fontes/idroid.otf') format('opentype');
+    font-weight: normal;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+    header {
+        background: linear-gradient(to top,  #036d80, #07e7f7);
+        padding: 5px;
+        overflow-x: hidden;
+        text-align: center;
+        min-height: 150px;
+    }
+
+    header > h1 {
+        font-family: 'Bebas Neue', sans-serif;
+        color: white;
+        text-shadow: 2px 2px 4px #00000080;
+        padding-top: 30px;
+        margin-bottom: 20px;
+        font-size: 3em;
+        text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.315);
+        font-weight: normal;
+    }
+
+    header > p {
+        padding: 10px;
+        color: white;
+        text-shadow: 2px 2px 4px #00000080;
+        font-size: 1.2em;
+        font-family: sans-serif;
+        margin-bottom: 20px;
+    }
+
+    nav {
+        margin-bottom: 20px;
+        font-family: sans-serif;
+        
+    }
+
+    nav > a {
+        text-decoration: none;
+        font-weight: bold;
+        margin: 10px 10px 15px 16px;
+        box-shadow: 0px 7px 9px rgba(0, 0, 0, 0.288);
+        color: white;
+    }
+    
+    nav > a:hover {
+        background-color: #07e7f7;
+        border-radius: 5px;
+        padding: 5px;
+        color: #036d80;
+        transition-duration: 0.2s;
+
+    }
+
+    body {
+        background-color: rgb(221, 218, 177);        
+    }
+
+    main p {
+        margin: 15px 0px 15px 0px;
+        text-align: justify;
+        text-indent: 30px;
+        line-height: 1.5em;
+        font-size: 0.9em;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    main a {
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    a.externo::after {
+        content: '\f0c1';
+        font-family: 'Font Awesome 5 Free';
+        margin-left: 5px;
+        font-size: 0.9em;
+
+    }
+
+    main a:hover {
+        color: rgb(59, 79, 255);
+    }
+
+    main strong {
+        color: #036d80;
+        font-weight: bold;
+    }
+
+    main {
+
+        min-width: 300px;
+        max-width: 1000px;
+        border: 2px solid;
+        background-color: white;
+        margin: auto;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        padding: 20px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.315);
+        font-weight: normal;
+    } 
+
+    main img {
+        width: 100%;
+    }
+
+    main img.pequena {
+        max-width: 350px;
+        display: block;
+        margin: auto;
+        
+    }
+
+    iframe.android {
+        display: block;
+        margin: auto;
+    }
+
+    article > h1, h2, h3 {
+        font-family: 'idroid', arial;
+        color: #036d80;
+    }
+
+    div.video {
+        background-color: black;
+        margin: 0px -20px 30px -20px;
+        padding: 20px;
+        padding-bottom: 50%;
+        position: relative;
+    }
+
+    div.video > iframe {
+        position: absolute;
+        top: 5%;
+        left: 5%;
+        width: 90%;
+        height: 90%;
+    }
+
+    aside {
+        background-color: beige;
+        padding: 10px;
+        border-radius: 10px;
+        line-height: 1.5em;
+        box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.281);
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    aside > ul {
+        list-style-type: '\2714\00A0\00A0';
+        list-style-position: inside;
+        columns: 2;
+        padding: 10px;
+    }
+
+    aside > h3 {
+        color: black;
+        background-color: rgb(180, 180, 163);
+        padding: 10px;
+        margin: -10px -10px 0px -10px;
+        border-radius: 10px 10px 0px 0px;
+    }
+
+    footer {
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+        text-align: center;
+        text-decoration: none; 
+        padding: 5px;
+        background-color: #036d80;
+    }
